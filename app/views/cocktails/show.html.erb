@@ -1,0 +1,13 @@
+
+<div class="container">
+  <h1>Show page</h1>
+  <%= @cocktail.name %>
+  <ul>
+    <% @cocktail.ingredients.each do |ingredient|%>
+    <li><%= ingredient.name %></li>
+    <% end %>
+  </ul>
+  <%= link_to "Cocktail list", cocktails_path %>
+  <%= link_to "Add dose", new_cocktail_dose_path(@cocktail)  %>
+  <%= link_to "Delete dose", dose_path(@cocktail), method: :delete, data: {confirm: "Are you sure?"}  %>
+</div>
