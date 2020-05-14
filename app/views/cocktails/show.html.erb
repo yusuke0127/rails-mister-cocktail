@@ -1,13 +1,39 @@
-
+<nav class="navbar navbar-light bg-light">
+  <%= link_to cocktails_path, class: 'navbar-brand' do %>
+    <span>Just drink it.</span><i class="fas fa-check"></i>
+  <% end %>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="" aria-label="Search">
+    <%= link_to "Add cocktail", new_cocktail_path, class: "btn btn-outline-dark my-2 my-sm-0" %>
+  </form>
+</nav>
 <div class="container">
-  <h1>Show page</h1>
-  <%= @cocktail.name %>
-  <ul>
-    <% @cocktail.ingredients.each do |ingredient|%>
-    <li><%= ingredient.name %></li>
-    <% end %>
-  </ul>
-  <%= link_to "Cocktail list", cocktails_path %>
-  <%= link_to "Add dose", new_cocktail_dose_path(@cocktail)  %>
-  <%= link_to "Delete dose", dose_path(@cocktail), method: :delete, data: {confirm: "Are you sure?"}  %>
+
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    <%= @cocktail.name %>
+  </div>
+  <div class="card m-3" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Ingredients</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <% @cocktail.ingredients.each do |ingredient|%>
+
+      <li class="list-group-item"><%= ingredient.name %></li>
+      <% end %>
+
+    </ul>
+    <div class="card-body">
+      <%= link_to "Add dose", new_cocktail_dose_path(@cocktail), class: "btn btn-outline-dark my-2 my-sm-0"  %>
+      <%= link_to "Delete dose", dose_path(@cocktail), method: :delete, data: {confirm: "Are you sure?"} ,class: "btn btn-outline-dark my-2 my-sm-0" %>
+    </div>
+  </div>
+  <h1>Add an ingredient</h1>
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.input :description %>
+    <%= f.association :ingredient %>
+    <%= f.button :submit %>
+  <% end %>
+  <%= link_to "Back", cocktails_path, class: "btn btn-outline-dark my-2 my-sm-0"  %>
 </div>

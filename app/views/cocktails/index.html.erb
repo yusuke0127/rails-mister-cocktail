@@ -1,5 +1,7 @@
 <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand">Mister Cocktail</a>
+  <%= link_to cocktails_path, class: 'navbar-brand' do %>
+    <span>Just drink it.</span><i class="fas fa-check"></i>
+  <% end %>
   <form class="form-inline">
     <input class="form-control mr-sm-2" type="search" placeholder="" aria-label="Search">
     <%= link_to "Add cocktail", new_cocktail_path, class: "btn btn-outline-dark my-2 my-sm-0" %>
@@ -7,27 +9,21 @@
 </nav>
 <div class="banner" >
   <div class="container">
-    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
+    <h1>Tomorrow <strong>you will wish</strong> you <strong>had drank today</strong>!</h1>
+    <p>Sometimes greatness is about drinking insurmountable amount of alcohol. Sometimes it’s just fun.</p>
   </div>
 </div>
 <div class="container">
-  <h1>Cocktail page</h1>
-  <div class="d-flex justify-content-around bd-highlight p-3 m-3">
+  <h1>Take a shot</h1>
+
+  <div class="cards">
     <% @cocktails.each do |cocktail| %>
-      <div class="card p-3" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><%= link_to cocktail.name, cocktail_path(cocktail) %></h5>
-        </div>
-        <ul class="list-group list-group-flush">
-          <% cocktail.ingredients.each do |ingredient|%>
-          <li class="list-group-item"><%= ingredient.name %></li>
-          <% end %>
-        </ul>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <%= link_to cocktail.name, cocktail_path(cocktail) %>
       </div>
     <% end %>
+
   </div>
 
-  <footer>Footer</footer>
+
 </div>
