@@ -8,6 +8,10 @@
 require 'open-uri'
 require 'json'
 
+puts "Deleting all ingredients"
+
+Ingredient.delete_all
+
 puts 'Getting the API for the ingredients'
 
 url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
