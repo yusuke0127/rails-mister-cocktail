@@ -20,13 +20,17 @@
       </div>
       <ul class="list-group list-group-flush">
         <% @cocktail.ingredients.each do |ingredient|%>
-
-        <li class="list-group-item"><%= ingredient.name %></li>
+          <li class="list-group-item"><%= ingredient.name %>
+            <% ingredient.doses.each do |dose| %>
+              <%= dose.description %>
+                <%= link_to dose_path(dose), method: :delete, data: {confirm: "Are you sure?"} do %>
+                  <i class="fas fa-trash-alt"></i>
+                <% end %>
+            <% end %>
+          </li>
         <% end %>
-
       </ul>
       <div class="card-body">
-        <%= link_to "Delete", dose_path(@cocktail), method: :delete, data: {confirm: "Are you sure?"} ,class: "btn btn-outline-dark my-2 my-sm-0" %>
       </div>
     </div>
     <div class="card p-3">
