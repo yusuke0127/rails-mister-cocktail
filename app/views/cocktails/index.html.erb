@@ -13,13 +13,13 @@
     <p>Sometimes greatness is about drinking insurmountable amount of alcohol. Sometimes it’s just fun.</p>
   </div>
 </div>
-<div class="container">
+<div class="container mt-5">
   <h1>Take a shot</h1>
 
   <div class="cards">
     <% @cocktails.each do |cocktail| %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.photo.attached? ? (cl_image_path cocktail.photo.key) : (image_path 'Mojito.jpg') %>)">
-        <%= link_to cocktail.name, cocktail_path(cocktail) %>
+        <%= link_to cocktail.name, cocktail_path(cocktail), class: "link-cocktails" %>
       </div>
     <% end %>
 

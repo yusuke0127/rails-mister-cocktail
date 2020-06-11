@@ -41,7 +41,7 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 400px;
+  height: 320px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,4 +52,8 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   object-fit: cover;
+}
+
+.card-category a {
+  color: white;
 }
