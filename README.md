@@ -19,8 +19,6 @@ After you clone this repo to your desktop, go to its root directory and run bund
 
 Once the dependencies are installed, you can run rails s or rails server to start the application. You will then be able to access it at localhost:3000.
 
-To be able to record your mood you will have to create an account. You can use a fake email to register.
-
 ## Team
 <table>
   <thead>
