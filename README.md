@@ -36,8 +36,3 @@ Once the dependencies are installed, you can run rails s or rails server to star
     </tr>
   </tbody>
 </table>
-
-
-## Template
-
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
